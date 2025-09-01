@@ -22,7 +22,7 @@ class GameMixGridPlayTion extends GetView<GameMixConfigLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.gmcdph.value)),
+              url: WebUri.uri(Uri.parse(controller.pcenblqs.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

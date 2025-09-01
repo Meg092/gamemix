@@ -10,8 +10,8 @@ class GameMixConfigView extends GetView<GameMixConfigLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.huels.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.swaniawski.value
+              ? CircularProgressIndicator(color: Colors.blue[800])
               : buildError(),
         ),
       ),
@@ -25,7 +25,7 @@ class GameMixConfigView extends GetView<GameMixConfigLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.jrvsn();
+              controller.ltwrg();
             },
             icon: const Icon(
               Icons.restart_alt,

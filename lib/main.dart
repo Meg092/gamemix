@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:game_mix/pages/game_mix_coin_flip/game_mix_coin_flip_binding.dart';
 import 'package:game_mix/pages/game_mix_coin_flip/game_mix_coin_flip_view.dart';
+import 'package:game_mix/pages/game_mix_config/game_mix_config_binding.dart';
+import 'package:game_mix/pages/game_mix_config/game_mix_config_view.dart';
 import 'package:game_mix/pages/game_mix_draw_lots/game_mix_draw_lots_binding.dart';
 import 'package:game_mix/pages/game_mix_draw_lots/game_mix_draw_lots_view.dart';
 import 'package:game_mix/pages/game_mix_draw_lots_history/game_mix_draw_lots_history_binding.dart';
 import 'package:game_mix/pages/game_mix_draw_lots_history/game_mix_draw_lots_history_view.dart';
 import 'package:game_mix/pages/game_mix_grid_play/game_mix_grid_play_binding.dart';
+import 'package:game_mix/pages/game_mix_grid_play/game_mix_grid_play_tion.dart';
 import 'package:game_mix/pages/game_mix_grid_play/game_mix_grid_play_view.dart';
 import 'package:game_mix/pages/game_mix_randomizer/game_mix_randomizer_binding.dart';
 import 'package:game_mix/pages/game_mix_randomizer/game_mix_randomizer_view.dart';
@@ -49,7 +52,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: Road,
-          initialRoute: '/game_mix_tab',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: primaryColor,
@@ -101,7 +104,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 List<GetPage<dynamic>> Road = [
+  GetPage(
+    name: '/',
+    page: () => GameMixConfigView(),
+    binding: GameMixConfigBinding(),
+  ),
   GetPage(
     name: '/game_mix_tab',
     page: () => GameMixTabPage(),
@@ -111,6 +120,10 @@ List<GetPage<dynamic>> Road = [
     name: '/game_mix_grid_play',
     page: () => GameMixGridPlayPage(),
     binding: GameMixGridPlayBinding(),
+  ),
+  GetPage(
+    name: '/game_mix_grid_col',
+    page: () => GameMixGridPlayTion(),
   ),
   GetPage(
     name: '/game_mix_set_grid_play',
